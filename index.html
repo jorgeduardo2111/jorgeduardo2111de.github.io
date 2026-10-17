@@ -1,0 +1,490 @@
+<!index html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Jorge Eduardo Navarro - Professionelles Portfolio | Systemingenieur · IT-Support">
+    <meta name="author" content="Jorge Eduardo Navarro Babilonia">
+    <title>Jorge Eduardo Navarro | Professionelles Portfolio</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        body {
+            background-color: #ffffff;
+            color: #1a1a1a;
+            line-height: 1.6;
+        }
+        header {
+            background: linear-gradient(135deg, #0f766e 0%, #14b8a6 100%); /* Verde Esmeralda / Teal */
+            color: white;
+            padding: 20px 40px;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+        }
+        nav a {
+            color: white;
+            text-decoration: none;
+            margin: 0 15px;
+            font-weight: 500;
+            transition: opacity 0.3s;
+        }
+        nav a:hover {
+            opacity: 0.8;
+        }
+        .logo {
+            font-size: 1.5em;
+            font-weight: bold;
+        }
+        .hero {
+            background: linear-gradient(135deg, #14b8a6 0%, #0f766e 100%); /* Verde Esmeralda / Teal */
+            color: white;
+            padding: 80px 40px;
+            text-align: center;
+        }
+        .hero h1 {
+            font-size: 3em;
+            margin-bottom: 10px;
+        }
+        .hero .subtitle {
+            font-size: 1.3em;
+            opacity: 0.95;
+            margin-bottom: 20px;
+        }
+        .hero .name {
+            font-size: 1.8em;
+            margin-bottom: 25px;
+        }
+        .hero .description {
+            max-width: 800px;
+            margin: 0 auto 30px;
+            font-size: 1.1em;
+        }
+        .btn {
+            display: inline-block;
+            padding: 12px 25px;
+            margin: 10px;
+            border-radius: 5px;
+            text-decoration: none;
+            font-weight: bold;
+            transition: all 0.3s ease;
+        }
+        .btn-primary {
+            background-color: #e0f2f1; /* Verde muy suave */
+            color: #0f766e;
+        }
+        .btn-primary:hover {
+            background-color: #b2dfdb;
+            transform: translateY(-2px);
+        }
+        .btn-secondary {
+            background-color: transparent;
+            color: white;
+            border: 2px solid white;
+        }
+        .btn-secondary:hover {
+            background-color: white;
+            color: #0f766e;
+        }
+        .btn-download {
+            background-color: #059669; /* Verde más oscuro para contraste */
+            color: white;
+            border: 2px solid #059669;
+        }
+        .btn-download:hover {
+            background-color: #047857;
+            border-color: #047857;
+            transform: translateY(-2px);
+        }
+        section {
+            padding: 60px 40px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        section h2 {
+            color: #0f766e; /* Verde Esmeralda oscuro */
+            font-size: 2.2em;
+            margin-bottom: 30px;
+            border-bottom: 3px solid #14b8a6; /* Verde Teal */
+            padding-bottom: 10px;
+        }
+        .tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            margin: 20px 0;
+            justify-content: center;
+        }
+        .tag {
+            background-color: #14b8a6; /* Verde Teal */
+            color: white;
+            padding: 6px 14px;
+            border-radius: 20px;
+            font-size: 0.9em;
+        }
+        .card {
+            background: #f8fafc;
+            padding: 25px;
+            margin: 20px 0;
+            border-radius: 8px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.04);
+            border-left: 5px solid #14b8a6; /* Verde Teal */
+            border: 1px solid #e2e8f0;
+        }
+        .card h3 {
+            color: #0f766e;
+            margin-bottom: 10px;
+        }
+        .card .date {
+            color: #666;
+            font-style: italic;
+            margin-bottom: 10px;
+        }
+        .card ul {
+            margin-left: 20px;
+            margin-top: 10px;
+        }
+        .card li {
+            margin-bottom: 8px;
+        }
+        .competencia-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 20px;
+            margin-top: 30px;
+        }
+        .competencia-item {
+            background: #f8fafc;
+            padding: 25px;
+            border-radius: 8px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.04);
+            transition: transform 0.3s;
+            border: 1px solid #e2e8f0;
+        }
+        .competencia-item:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 4px 15px rgba(0,0,0,0.08);
+        }
+        .competencia-item h3 {
+            color: #0f766e;
+            margin-bottom: 10px;
+        }
+        .competencia-item .icon {
+            font-size: 2em;
+            margin-bottom: 10px;
+        }
+        .formacion-item {
+            background: #f8fafc;
+            padding: 20px;
+            margin: 15px 0;
+            border-radius: 8px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.04);
+            border: 1px solid #e2e8f0;
+        }
+        .formacion-item h3 {
+            color: #0f766e;
+        }
+        .formacion-item p {
+            color: #666;
+        }
+        .cert-list {
+            list-style: none;
+            padding: 0;
+        }
+        .cert-list li {
+            background: #f8fafc;
+            padding: 15px 20px;
+            margin: 10px 0;
+            border-radius: 8px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.04);
+            border-left: 4px solid #059669;
+            border: 1px solid #e2e8f0;
+        }
+        .contacto-section {
+            background: linear-gradient(135deg, #0f766e 0%, #14b8a6 100%);
+            color: white;
+            text-align: center;
+        }
+        .contacto-section h2 {
+            color: white;
+            border-bottom-color: white;
+        }
+        .contacto-info {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 30px;
+            margin-top: 30px;
+        }
+        .contacto-info a {
+            color: white;
+            text-decoration: none;
+            font-size: 1.1em;
+        }
+        .contacto-info a:hover {
+            text-decoration: underline;
+        }
+        footer {
+            background: #134e4a; /* Verde muy oscuro para el footer */
+            color: white;
+            text-align: center;
+            padding: 20px;
+            font-size: 0.9em;
+        }
+        @media (max-width: 768px) {
+            .hero h1 { font-size: 2em; }
+            nav { flex-direction: column; gap: 10px; }
+            section { padding: 40px 20px; }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <nav>
+            <div class="logo">JORGE NAVARRO</div>
+            <div>
+                <a href="#profil">Profil</a>
+                <a href="#kompetenzen">Kompetenzen</a>
+                <a href="#erfahrung">Erfahrung</a>
+                <a href="#bildung">Bildung</a>
+                <a href="#kontakt">Kontakt</a>
+                <a href="#kontakt" class="btn btn-secondary" style="padding: 6px 15px; margin-left: 10px;">Kontaktieren</a>
+            </div>
+        </nav>
+    </header>
+
+    <section class="hero" id="start">
+        <div class="subtitle">Systemingenieurwesen · IT-Support</div>
+        <h1>Jorge Eduardo Navarro Babilonia</h1>
+        <p class="description">
+            Systemingenieur mit Erfahrung im technischen Support der zweiten Ebene (2nd Level), Service Desk, Verwaltung von Benutzern und Berechtigungen, technologischer Infrastruktur und Incident-Management. Fokus auf Servicekontinuität, Servicequalität und kontinuierliche Verbesserung.
+        </p>
+        <div class="tags">
+            <span class="tag">Service Desk</span>
+            <span class="tag">Ticket-Management</span>
+            <span class="tag">IT-Infrastruktur</span>
+            <span class="tag">Geräte, Netzwerke und Zugänge</span>
+            <span class="tag">Informationssicherheit</span>
+            <span class="tag">Weiterbildung</span>
+        </div>
+        <div style="margin-top: 30px;">
+            <a href="#erfahrung" class="btn btn-primary">Meine Erfahrung kennenlernen ↓</a>
+            <a href="mailto:jorgeeduardonavarro801@gmail.com?subject=Berufliche%20Chance" class="btn btn-secondary">Per E-Mail kontaktieren ↗</a>
+            <a href="Jorge_Navarro_ATS.pdf" download="Lebenslauf_Jorge_Navarro.pdf" class="btn btn-download">Lebenslauf herunterladen </a>
+        </div>
+    </section>
+
+    <section id="profil">
+        <h2>BERUFLICHES PROFIL</h2>
+        <div class="card">
+            <h3>Profil</h3>
+            <p><strong>Technologische Lösungen mit Serviceorientierung.</strong></p>
+            <p>Ich verbinde Diagnosefähigkeit, Kommunikation mit Benutzern und organisierte Nachverfolgung von Anforderungen, um zur Stabilität der IT-Services beizutragen.</p>
+        </div>
+        <div class="card">
+            <h3>Mein Fokus</h3>
+            <p>Incident- und Anforderungsmanagement, Vor-Ort- und Remote-Support je nach Bedarf, Benutzerverwaltung, technische Dokumentation und Begleitung von Arbeitsteams. Engagiert für operative Kontinuität und die Einhaltung von Service Level Agreements (SLAs).</p>
+        </div>
+        <div class="card">
+            <h3>Berufliche Stärken</h3>
+            <p>Analytisches Denken, Anpassungsfähigkeit, Kundenorientierung, kollaborative Arbeitsweise, kontinuierliches Lernen und die Bereitschaft, Supportprozesse zu dokumentieren und zu verbessern.</p>
+        </div>
+    </section>
+
+    <section id="kompetenzen" style="background-color: #f0fdfa;">
+        <h2>Bereiche, in denen ich einen Mehrwert schaffe</h2>
+        <div class="competencia-grid">
+            <div class="competencia-item">
+                <div class="icon"></div>
+                <h3>Service Desk und Support</h3>
+                <p>Benutzerbetreuung, Incident-Analyse, Erfassung, Eskalation, Nachverfolgung und Abschluss von Fällen.</p>
+                <div class="tags" style="justify-content: flex-start;">
+                    <span class="tag">Aranda</span>
+                    <span class="tag">SLA</span>
+                    <span class="tag">2nd-Level-Support</span>
+                </div>
+            </div>
+            <div class="competencia-item">
+                <div class="icon"></div>
+                <h3>Geräte und Systeme</h3>
+                <p>Hardware- und Software-Diagnose, Wartung, Konfiguration von Windows, Anwendungen und Peripheriegeräten.</p>
+                <div class="tags" style="justify-content: flex-start;">
+                    <span class="tag">Windows</span>
+                    <span class="tag">Microsoft Office</span>
+                    <span class="tag">Wartung</span>
+                </div>
+            </div>
+            <div class="competencia-item">
+                <div class="icon">⌁</div>
+                <h3>Netzwerke und Konnektivität</h3>
+                <p>Validierung der Konnektivität, LAN/WLAN-Netzwerke, Netzwerkdienste und Zugriff auf institutionelle Plattformen.</p>
+                <div class="tags" style="justify-content: flex-start;">
+                    <span class="tag">LAN</span>
+                    <span class="tag">WLAN</span>
+                    <span class="tag">Netzwerke</span>
+                </div>
+            </div>
+            <div class="competencia-item">
+                <div class="icon"></div>
+                <h3>Identitäten und Zugriffe</h3>
+                <p>Unterstützung bei der Verwaltung von Konten, Berechtigungen, gemeinsamen Ressourcen und Multi-Faktor-Authentifizierung (MFA).</p>
+                <div class="tags" style="justify-content: flex-start;">
+                    <span class="tag">Active Directory</span>
+                    <span class="tag">Microsoft 365</span>
+                    <span class="tag">MFA</span>
+                </div>
+            </div>
+            <div class="competencia-item">
+                <div class="icon">⛨</div>
+                <h3>Informationssicherheit</h3>
+                <p>Schulung in Cybersicherheit, Netzwerken, Bedrohungen, Schwachstellen und Schutzgrundlagen.</p>
+                <div class="tags" style="justify-content: flex-start;">
+                    <span class="tag">Cybersicherheit</span>
+                    <span class="tag">Network Defense</span>
+                    <span class="tag">Linux</span>
+                </div>
+            </div>
+            <div class="competencia-item">
+                <div class="icon">▤</div>
+                <h3>Dokumentation und Qualität</h3>
+                <p>Erstellung von Anleitungen, Berichten, technischer Dokumentation und Unterstützung bei funktionalen und technischen Tests.</p>
+                <div class="tags" style="justify-content: flex-start;">
+                    <span class="tag">Dokumentation</span>
+                    <span class="tag">Tests</span>
+                    <span class="tag">Kontinuierliche Verbesserung</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="erfahrung">
+        <h2>Berufserfahrung</h2>
+        <div class="card">
+            <div class="date">Januar 2026 – Heute</div>
+            <h3>Systemingenieur – IT-Service Desk, Level 2</h3>
+            <p><strong>Ministerio de Minas y Energía (Ministerium für Bergbau und Energie)</strong></p>
+            <ul>
+                <li>Bereitstellung von Second-Level-Support und Bearbeitung von Incidents und Anforderungen der technologischen Dienste.</li>
+                <li>Management von Tickets in Aranda, unter Sicherstellung von Erfassung, Rückverfolgbarkeit und Nachverfolgung bis zum Abschluss.</li>
+                <li>Unterstützung bei Anfragen zu Microsoft 365, Active Directory, Konten, Berechtigungen und Multi-Faktor-Authentifizierung (MFA).</li>
+                <li>Diagnose von Hardware-, Software-, Konnektivitäts- und Zugriffsproblemen bei institutionellen Anwendungen.</li>
+                <li>Unterstützung bei der Dokumentation von Anforderungen, funktionalen und technischen Tests sowie der Erstellung von Handbüchern und Anleitungen.</li>
+            </ul>
+        </div>
+        <div class="card">
+            <div class="date">Februar 2024 – Januar 2026</div>
+            <h3>Vor-Ort-Support-Techniker</h3>
+            <p><strong>INDRA COLOMBIA S.A.S.</strong></p>
+            <ul>
+                <li>Bearbeitung von Incidents bei Geräten, Software, Betriebssystemen und technologischen Diensten mit Erfassung und Nachverfolgung in Aranda.</li>
+                <li>Durchführung von präventiver und korrektiver Wartung, Bereitstellung und Konfiguration von Geräten und Peripheriegeräten.</li>
+                <li>Unterstützung bei der Validierung von LAN/WLAN-Netzwerken, Druckern, Scannern, digitalen Zertifikaten und Plattformzugriffen.</li>
+                <li>Verwaltung des technologischen Inventars, Dokumentation und Eskalation von Fällen, die höhere Supportebenen erforderten.</li>
+                <li>Begleitung von Benutzern bei der Nutzung von Corporate E-Mail, Microsoft 365, OneDrive und IT-Ressourcen.</li>
+            </ul>
+        </div>
+        <div class="card">
+            <div class="date">September 2022 – Januar 2024</div>
+            <h3>Vor-Ort-Support-Techniker</h3>
+            <p><strong>COLVATEL S.A. E.S.P. · Projekt Ministerio del Trabajo</strong></p>
+            <ul>
+                <li>Bereitstellung von Vor-Ort-Support und Bearbeitung von Incidents, Anfragen und Anforderungen, die vom Service Desk eskaliert wurden.</li>
+                <li>Diagnose von Hardware- und Softwarefehlern und Durchführung von präventiver und korrektiver Wartung.</li>
+                <li>Installation und Konfiguration von Betriebssystemen, Anwendungen, Microsoft Office und erforderlicher Software.</li>
+                <li>Erfassung und Nachverfolgung von Tickets, Eskalation von Fällen und Unterstützung bei der Einhaltung von Service Level Agreements (SLAs).</li>
+                <li>Aktualisierung von Inventaren und Erstellung von Berichten, Statistiken und Dokumentationen der durchgeführten Aktivitäten.</li>
+            </ul>
+        </div>
+    </section>
+
+    <section id="bildung" style="background-color: #f0fdfa;">
+        <h2>Akademische Ausbildung und Zertifizierungen</h2>
+        <div class="formacion-item">
+            <h3>SYSTEMINGENIEURWESEN</h3>
+            <p>Fundación Universitaria San José</p>
+        </div>
+        <div class="formacion-item">
+            <h3>TECHNOLOGIE IM MANAGEMENT VON INFORMATIONSSYSTEMEN</h3>
+            <p>Fundación de Educación Superior San José</p>
+        </div>
+        <div class="formacion-item">
+            <h3>TECHNIKER FÜR COMPUTERWARTUNG</h3>
+            <p>Instituto de Sistemas System Center</p>
+        </div>
+        <div class="formacion-item">
+            <h3>DATENANALYSE UND -VIRTUALISIERUNG</h3>
+            <p>Ministerium für Informationstechnologie und Kommunikation (MinTIC)</p>
+        </div>
+        <div class="formacion-item">
+            <h3>DIPLOM IN ANALYTIK UND BIG DATA</h3>
+            <p>Fundación de Educación Superior San José</p>
+        </div>
+        <div class="formacion-item">
+            <h3>DIPLOM IN INFORMATIONSSICHERHEIT</h3>
+            <p>Fundación de Educación Superior San José</p>
+        </div>
+
+        <h2 style="margin-top: 50px;">Herausragende Zertifizierungen und Kurse</h2>
+        <p style="margin-bottom: 20px; font-style: italic;">Kontinuierliches Lernen.</p>
+        <ul class="cert-list">
+            <li><strong>PROFESSIONELLE ZERTIFIZIERUNG IN CYBERSICHERHEIT</strong> – Google · Coursera</li>
+            <li><strong>JUNIOR CYBERSICHERHEITSANALYST</strong> – Cisco Networking Academy</li>
+            <li><strong>ITIL 4 GRUNDLAGEN</strong> – PeopleCert</li>
+            <li><strong>GRUNDLAGEN DER KI / GOOGLE AI ESSENTIALS</strong> – Google · Coursera</li>
+            <li><strong>NETWORK DEFENSE UND ENDPOINT SECURITY</strong> – Cisco Networking Academy</li>
+            <li><strong>LINUX, SQL UND PYTHON FÜR CYBERSICHERHEIT</strong> – Google · Coursera</li>
+            <li><strong>EINFÜHRUNG IN DATENBANKEN</strong> – Google · Coursera</li>
+            <li><strong>IT-SERVICE-MANAGEMENT</strong></li>
+        </ul>
+
+        <h2 style="margin-top: 50px;">Weiterbildung</h2>
+        <div class="formacion-item">
+            <h3>DEUTSCHKURS NIVEAU A.1.2</h3>
+            <p>ECAP Zürich</p>
+        </div>
+        <p style="margin-top: 20px;">Der Lebenslauf umfasst zusätzliche Kurse in Netzwerken, Cybersicherheit, Python, SQL, Linux, Microsoft 365 und Service-Management.</p>
+    </section>
+
+    <section id="kontakt" class="contacto-section">
+        <h2>Lassen Sie uns über eine Gelegenheit sprechen</h2>
+        <p style="font-size: 1.1em; max-width: 700px; margin: 0 auto;">
+            Ich bin an Möglichkeiten interessiert, bei denen ich mein Wissen in IT-Support, Service Desk, technologischer Infrastruktur und Informationssicherheit einbringen kann.
+        </p>
+        <div style="margin-top: 30px;">
+            <a href="mailto:jorgeeduardonavarro801@gmail.com?subject=Berufliche%20Chance" class="btn btn-primary">E-Mail senden ↗</a>
+            <a href="Jorge_Navarro_ATS.pdf" download="Lebenslauf_Jorge_Navarro.pdf" class="btn btn-download">Lebenslauf herunterladen 📄</a>
+        </div>
+        <div class="contacto-info">
+            <div>
+                <strong>E-Mail</strong><br>
+                <a href="mailto:jorgeeduardonavarro801@gmail.com">jorgeeduardonavarro801@gmail.com</a>
+            </div>
+            <div>
+                <strong>Telefon</strong><br>
+                <a href="tel:+573205199361">+57 320 519 9361</a>
+            </div>
+            <div>
+                <strong>Standort</strong><br>
+                Kolumbien
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <p>ⓓ Jorge Eduardo Navarro Babilonia | WhatsApp: @JorEduardo | Professionelles Portfolio · Technologie und IT-Dienstleistungen</p>
+    </footer>
+
+</body>
+</html>

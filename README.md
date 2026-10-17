@@ -1,2 +1,2 @@
 # jorgeduardo2111de.github.io
-portafolio web en aleman
+INGENIERO DE SISTEMAS
